@@ -4,10 +4,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "scores")
+@NamedQueries(
+{ 
+	@NamedQuery(name = "getALL", query = "select a from Asteroid a order by a.score DESC")
+		 })
 public class Asteroid
 {
 	
